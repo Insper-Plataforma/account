@@ -317,9 +317,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#como-rodar" class="md-nav__link">
+  <a href="#como-usar" class="md-nav__link">
     <span class="md-ellipsis">
-      Como rodar
+      Como usar
     </span>
   </a>
   
@@ -378,9 +378,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#como-rodar" class="md-nav__link">
+  <a href="#como-usar" class="md-nav__link">
     <span class="md-ellipsis">
-      Como rodar
+      Como usar
     </span>
   </a>
   
@@ -412,19 +412,20 @@
 
 
 <h1 id="setup-e-dependencias">Setup e dependências</h1>
-<p>Este módulo depende do seguinte:</p>
-<ul>
-<li>Spring Cloud OpenFeign</li>
-<li>Spring Boot</li>
-<li>Integração com o microsserviço <code>account</code> rodando na porta <code>8080</code></li>
-</ul>
+<p>Este módulo define apenas a <strong>interface REST <code>AccountController</code></strong> e os DTOs relacionados.</p>
 <hr />
 <h2 id="como-compilar">Como compilar</h2>
 <pre><code class="language-bash">mvn clean install
 </code></pre>
 <hr />
-<h2 id="como-rodar">Como rodar</h2>
-<p>Este é um módulo de interface, portanto não roda isoladamente. Deve ser usado em um projeto que consome esta interface Feign.</p>
+<h2 id="como-usar">Como usar</h2>
+<p>Este módulo é usado como <strong>dependência em <code>account-service</code></strong>, que implementa de fato a interface.</p>
+<p>Certifique-se de importar o pacote corretamente ao implementar:</p>
+<pre><code class="language-java">@RestController
+public class AccountResource implements AccountController {
+    // ...
+}
+</code></pre>
 <hr />
 <h2 id="requisitos">Requisitos</h2>
 <p>Requisitos no arquivo <code>pom.xml</code>:</p>
