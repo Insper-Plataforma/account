@@ -18,8 +18,8 @@ Facilitar a comunicação entre microsserviços por meio de chamadas REST encaps
 
 ## Estrutura dos arquivos
 
-| Arquivo | Descrição |
-|--------|-----------|
+| Arquivo                  | Descrição                                                               |
+| ------------------------ | ----------------------------------------------------------------------- |
 | `AccountController.java` | Interface Feign com os endpoints disponíveis do microsserviço de contas |
-| `AccountIn.java` | Objeto de entrada para criação e login |
-| `AccountOut.java` | Objeto de resposta contendo dados públicos do usuário |
+| `AccountIn.java`         | Objeto de entrada para criação e login                                  |
+| `AccountOut.java`        | Objeto de resposta contendo dados públicos do usuário                   |
