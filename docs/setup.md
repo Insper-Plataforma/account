@@ -1,10 +1,6 @@
 # Setup e dependências
 
-Este módulo depende do seguinte:
-
-- Spring Cloud OpenFeign
-- Spring Boot
-- Integração com o microsserviço `account` rodando na porta `8080`
+Este módulo define apenas a **interface REST `AccountController`** e os DTOs relacionados.
 
 ---
 
@@ -16,9 +12,18 @@ mvn clean install
 
 ---
 
-## Como rodar
+## Como usar
 
-Este é um módulo de interface, portanto não roda isoladamente. Deve ser usado em um projeto que consome esta interface Feign.
+Este módulo é usado como **dependência em `account-service`**, que implementa de fato a interface.
+
+Certifique-se de importar o pacote corretamente ao implementar:
+
+```java
+@RestController
+public class AccountResource implements AccountController {
+    // ...
+}
+```
 
 ---
 
