@@ -268,6 +268,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#integracao-com-jenkins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integração com Jenkins
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integração com Jenkins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#para-que-serve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Para que serve?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -395,6 +419,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#integracao-com-jenkins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integração com Jenkins
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integração com Jenkins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#para-que-serve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Para que serve?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -445,6 +493,30 @@
 </tr>
 </tbody>
 </table>
+<hr />
+<h2 id="integracao-com-jenkins">Integração com Jenkins</h2>
+<p>Este projeto conta com um arquivo Jenkinsfile (na raiz do repositório) que define uma pipeline de integração contínua para compilar automaticamente o módulo sempre que houver alterações no repositório.</p>
+<h3 id="para-que-serve">Para que serve?</h3>
+<ul>
+<li>
+<p>Ao efetuar um push no repositório, o Jenkins detecta a mudança e executa esta pipeline.</p>
+</li>
+<li>
+<p>A etapa Build faz a compilação do projeto:</p>
+<ol>
+<li>
+<p>Executa mvn clean install em modo batch (parâmetro -B), sem interação de usuário.</p>
+</li>
+<li>
+<p>Pulando os testes (-DskipTests), gera rapidamente o artefato (JAR) do módulo de interface.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Caso a compilação falhe, o Jenkins sinaliza erro, impedindo que alterações com problemas sejam mescladas ou implantadas.</p>
+</li>
+</ul>
+<p>Dessa forma, a integração com Jenkins garante que o código da interface Feign esteja sempre compilando corretamente antes de ser utilizado por outros microsserviços.</p>
 
 
 
